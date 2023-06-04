@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type='text/javascript' src='/node_modules/knockout/build/output/knockout-latest.js'></script>
+</head>
+<body>
+   <div data-bind="foreach: types">
+        <div>
+            <button data-bind="text:name,click: onclick"></button>
+        </div>
+    </div>
+    <div data-bind="foreach: types">
+        <div data-bind="style:style">
+            <div data-bind="foreach: items">
+                <button data-bind="text:name, click:onclick"></button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div data-bind="foreach: shoppingCart">
+            <div data-bind="text: name"></div>
+            <div data-bind="text: price"></div>
+            <button data-bind="click: ondelete">Delete</button>
+        </div>
+    </div>
+    <div data-bind="text: totalSurcharge()"></div>
+</body>
+<script type='text/javascript' src='index.js'></script>
+</html>
